@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: e362bc6a7c79fce4db16d145d43a5550
-AssetOrigin:
-  serializedVersion: 1
-  productId: 155360
-  packageName: Pixel Adventure 1
-  packageVersion: 1.0
-  assetPath: Assets/Pixel Adventure 1/Assets/Main Characters/Ninja Frog/Run (32x32).png
-  uploadId: 332803
+guid: 4f1bfc7488cd24d4ba253b92a55b608d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -198,13 +191,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run (32x32)_0
+      name: Walk (32x32)_0
       rect:
         serializedVersion: 2
         x: 4
-        y: 0
+        y: 3
         width: 23
-        height: 27
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,13 +212,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_1
+      name: Walk (32x32)_1
       rect:
         serializedVersion: 2
         x: 36
-        y: 0
+        y: 4
         width: 23
-        height: 28
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,13 +233,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_2
+      name: Walk (32x32)_2
       rect:
         serializedVersion: 2
         x: 68
-        y: 0
+        y: 4
         width: 23
-        height: 28
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,13 +254,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_3
+      name: Walk (32x32)_3
       rect:
         serializedVersion: 2
         x: 100
-        y: 0
+        y: 2
         width: 23
-        height: 26
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_4
+      name: Walk (32x32)_4
       rect:
         serializedVersion: 2
         x: 131
@@ -303,7 +296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_5
+      name: Walk (32x32)_5
       rect:
         serializedVersion: 2
         x: 163
@@ -324,13 +317,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_6
+      name: Walk (32x32)_6
       rect:
         serializedVersion: 2
         x: 196
-        y: 0
+        y: 3
         width: 24
-        height: 27
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,13 +338,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_7
+      name: Walk (32x32)_7
       rect:
         serializedVersion: 2
         x: 228
-        y: 0
+        y: 4
         width: 24
-        height: 28
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,13 +359,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_8
+      name: Walk (32x32)_8
       rect:
         serializedVersion: 2
         x: 260
-        y: 0
+        y: 4
         width: 24
-        height: 28
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,13 +380,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_9
+      name: Walk (32x32)_9
       rect:
         serializedVersion: 2
         x: 292
-        y: 0
+        y: 2
         width: 24
-        height: 26
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,7 +401,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_10
+      name: Walk (32x32)_10
       rect:
         serializedVersion: 2
         x: 323
@@ -429,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run (32x32)_11
+      name: Walk (32x32)_11
       rect:
         serializedVersion: 2
         x: 355
@@ -460,18 +453,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run (32x32)_0: 7166236263522030466
-      Run (32x32)_1: 2470319409956435798
-      Run (32x32)_10: -362971539341918764
-      Run (32x32)_11: 2178398316516280758
-      Run (32x32)_2: -4540918584354326388
-      Run (32x32)_3: -4455822056875728695
-      Run (32x32)_4: -5364790588639958657
-      Run (32x32)_5: -1512656188830553638
-      Run (32x32)_6: -2754230144694611447
-      Run (32x32)_7: -2419971920513260168
-      Run (32x32)_8: 1843850012483549754
-      Run (32x32)_9: 241620830004830169
+      Walk (32x32)_0: 7166236263522030466
+      Walk (32x32)_1: 2470319409956435798
+      Walk (32x32)_10: -362971539341918764
+      Walk (32x32)_11: 2178398316516280758
+      Walk (32x32)_2: -4540918584354326388
+      Walk (32x32)_3: -4455822056875728695
+      Walk (32x32)_4: -5364790588639958657
+      Walk (32x32)_5: -1512656188830553638
+      Walk (32x32)_6: -2754230144694611447
+      Walk (32x32)_7: -2419971920513260168
+      Walk (32x32)_8: 1843850012483549754
+      Walk (32x32)_9: 241620830004830169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
