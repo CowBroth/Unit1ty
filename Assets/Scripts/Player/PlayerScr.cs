@@ -10,6 +10,7 @@ public class PlayerScr : MonoBehaviour
     SpriteRenderer sr;
     Transform tr;
     PublicScr pubScr;
+    CommonRay cmnRay;
 
     public Vector3 jumpHgh = new Vector3(0, 0, 0);
     public bool walk;
@@ -17,14 +18,19 @@ public class PlayerScr : MonoBehaviour
     float op;
     float np;
 
+    public int melonCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
 
         pubScr = gameObject.AddComponent<PublicScr>();
+        cmnRay = gameObject.AddComponent<CommonRay>();
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         sr = GetComponent<SpriteRenderer>();
+
+        melonCount = 0;
         
     }
 
@@ -37,6 +43,8 @@ public class PlayerScr : MonoBehaviour
         PlrRun();
         PlrJump();
         op = transform.position.y;
+
+        //check for collision with melon
         
     }
 
@@ -87,7 +95,7 @@ public class PlayerScr : MonoBehaviour
     void PlrJump()
     { 
 
-        if (Input.GetKeyDown("z") && pubScr.GroundRaycast())
+        if (Input.GetKeyDown("z") && cmnRay.grnd == true)
         {
             rb.AddForce(jumpHgh, ForceMode2D.Impulse);
         }

@@ -7,14 +7,14 @@ public class PlrAnimScr : MonoBehaviour
 
     Animator anim;
     PlayerScr plr;
-    PublicScr pubScr;
+    CommonRay cmnRay;
 
     void Start()
     {
         
         anim = GetComponent<Animator>();
         plr = GetComponent<PlayerScr>();
-        pubScr = gameObject.AddComponent<PublicScr>();
+        cmnRay = gameObject.AddComponent<CommonRay>();
 
         anim.GetBool("Walk");
         anim.GetBool("Run");
@@ -32,7 +32,7 @@ public class PlrAnimScr : MonoBehaviour
     private void Walk()
     { 
 
-        if (plr.walk && pubScr.GroundRaycast())
+        if (plr.walk && cmnRay.grnd == true)
         {
             anim.SetBool("Run", false);
             anim.SetBool("Walk", true);
@@ -47,7 +47,7 @@ public class PlrAnimScr : MonoBehaviour
     private void Run()
     {
 
-        if (plr.run && pubScr.GroundRaycast())
+        if (plr.run && cmnRay.grnd == true)
         {
             anim.SetBool("Walk", false);
             anim.SetBool("Run", true);
