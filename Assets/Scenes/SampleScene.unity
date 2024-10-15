@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 469834921}
   - component: {fileID: 469834922}
   - component: {fileID: 469834924}
-  - component: {fileID: 469834926}
+  - component: {fileID: 469834925}
   m_Layer: 0
   m_Name: melon
   m_TagString: Untagged
@@ -323,12 +323,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469834919}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.305, y: -0.472, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2510004, y: -2.039, z: 0.19857863}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1293453688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &469834924
 BoxCollider2D:
@@ -374,26 +374,30 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.18, y: 0.12}
+  m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
---- !u!111 &469834926
-Animation:
+--- !u!95 &469834925
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469834919}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 7dff54bffc8b9a04eb753ba1c8ed4060, type: 2}
-  - {fileID: 7400000, guid: e40d9d865ab5e084e9a8fb9c1b8d8969, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca2897c587d3c794b8b0e2980c0c39f2, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
-  m_CullingType: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +902,8 @@ Transform:
   m_LocalPosition: {x: -6.556, y: 1.567, z: -0.19857863}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 469834923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &1293453689
@@ -1566,5 +1571,4 @@ SceneRoots:
   - {fileID: 1947073534}
   - {fileID: 1113682398}
   - {fileID: 737566259}
-  - {fileID: 469834923}
   - {fileID: 1293453688}
