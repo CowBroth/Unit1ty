@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class MelonScr : MonoBehaviour
 {
-    public GameObject melon;
-    MelonCountScr count;
-    private void Start()
+    GameObject a;
+    MelonCountScr b;
+    Animation c;
+    IEnumerator d;
+    BoxCollider2D e;
+    void Start()
     {
-        melon.GetComponent<MelonCountScr>();
+        a = GameObject.Find("MelonCounter");
+        b = a.GetComponent<MelonCountScr>();
+        c = GetComponent<Animation>();
+        e = GetComponent<BoxCollider2D>();
+
+        c.Play("m_melon");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.CompareTag("Player"))
+        if (col.CompareTag("Player"))
         {
-            melon.melonCount++;
-            print("Melons: " + melon.melonCount);
+            e.gameObject.SetActive(false);
+            b.melonCount++;
+            c.Play("m_col");
+            new WaitForSeconds(0.717f);
             Destroy(gameObject);
         }
     }
