@@ -13,8 +13,8 @@ public class PlayerScr : MonoBehaviour
     CommonRay cmnRay;
 
     public Vector3 jumpHgh = new Vector3(0, 0, 0);
-    public bool walk;
-    public bool run;
+    public bool jump;
+    public bool fall;
     float op;
     float np;
 
@@ -55,19 +55,12 @@ public class PlayerScr : MonoBehaviour
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-3, rb.velocity.y);
-            walk = true;
         }
-        else if (Input.GetKey("right"))
+        if (Input.GetKey("right"))
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(3, rb.velocity.y);
-            walk = true;
         }
-        else
-        {
-            walk = false;
-        }
-
     }
 
     void PlrRun()
@@ -77,19 +70,12 @@ public class PlayerScr : MonoBehaviour
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-6, rb.velocity.y);
-            run = true;
         }
-        else if (Input.GetKey("x") && Input.GetKey("right"))
+        if (Input.GetKey("x") && Input.GetKey("right"))
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(6, rb.velocity.y);
-            run = true;
         }
-        else
-        {
-            run = false;
-        }
-
     }
 
     void PlrJump()
@@ -98,6 +84,16 @@ public class PlayerScr : MonoBehaviour
         if (Input.GetKeyDown("z") && cmnRay.grnd == true)
         {
             rb.AddForce(jumpHgh, ForceMode2D.Impulse);
+        }
+        if (np > op)
+        {
+            jump = true;
+            fall = false;
+        }
+        else
+        {
+            fall = true;
+            jump = false;
         }
 
     }
