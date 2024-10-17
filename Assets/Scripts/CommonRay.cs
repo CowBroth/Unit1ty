@@ -8,20 +8,25 @@ public class CommonRay : MonoBehaviour
     public bool grnd;
     LayerMask floor;
     Color color = Color.white;
+    Vector3 nemOff = new Vector3(0.5f, 0.1f, 0);
 
     void Start()
     {
         floor = LayerMask.GetMask("Floor");
     }
-
     void Update()
     {
-        PlrGrndRay();
+        if (gameObject.CompareTag("Player"))
+        {
+            PlrGrndRay();
+        }
+        if (gameObject.CompareTag("Enemy"))
+        {
+            NemGrndRay();
+        }
     }
-
     void PlrGrndRay()
     {
-
         float length = 0.15f;
         Vector3 off1 = new Vector3(-0.22f, 0.1f, 0f);
         Vector3 off2 = new Vector3(0.22f, 0.1f, 0f);
@@ -44,5 +49,27 @@ public class CommonRay : MonoBehaviour
         Debug.DrawRay(transform.position + off2, Vector2.down * length, color);
 
     }
-    
+    float nemL = 1;
+    Color nemC;
+    public bool nemT;
+    void NemGrndRay()
+    {
+        RaycastHit2D eRay = Physics2D.Raycast(transform.position + nemOff, Vector2.down, nemL, floor);
+
+        if (eRay.collider == null && !nemT)
+        {
+            nemC = Color.white;
+            nemT = true;
+            nemOff.x = -0.5f;
+        }
+        if (eRay.collider != null && nemT)
+        {
+            nemC = Color.green;
+            nemT = false;
+            nemOff.x = 0.5f;
+        }
+        Debug.DrawRay(transform.position + nemOff, Vector2.down * nemL, nemC);
+
+        print(nemT);
+    }
 }

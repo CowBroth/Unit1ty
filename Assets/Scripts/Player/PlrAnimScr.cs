@@ -4,77 +4,50 @@ using UnityEngine;
 
 public class PlrAnimScr : MonoBehaviour
 {
-
     Animator anim;
     PlayerScr plr;
-    CommonRay cmnRay;
-    Rigidbody2D rb;
-
-    void Start()
+    private void Start()
     {
-
         anim = GetComponent<Animator>();
         plr = GetComponent<PlayerScr>();
-        rb = GetComponent<Rigidbody2D>();
-        cmnRay = gameObject.AddComponent<CommonRay>();
 
         anim.GetBool("Walk");
         anim.GetBool("Run");
         anim.GetBool("Jump");
         anim.GetBool("Fall");
-
     }
-
-    void FixedUpdate()
+    private void Update()
     {
-        Walk();
-        Run();
-        Jump();
-        Grnd();
-    }
-
-    private void Walk()
-    {
-
-        if (rb.velocityX > 1 && rb.velocityX < 6 && cmnRay.grnd)
+        if (plr.walk)
         {
-            anim.SetBool("Run", false);
             anim.SetBool("Walk", true);
         }
-    }
-
-    private void Run()
-    {
-
-        if (rb.velocityX >= 6 && cmnRay.grnd)
+        else
         {
             anim.SetBool("Walk", false);
+        }
+        if (plr.run)
+        {
             anim.SetBool("Run", true);
         }
-    }
-    private void Jump()
-    {
-        if (plr.jump && !cmnRay.grnd)
+        else
         {
-            anim.SetBool("Jump", true);
-            anim.SetBool("Fall", false);
-        }
-        if (plr.fall && !cmnRay.grnd)
-        {
-            anim.SetBool("Fall", true);
-            anim.SetBool("Jump", false);
-        }
-    }
-    private void Grnd()
-    {
-        if (!cmnRay.grnd)
-        {
-            anim.SetBool("Walk", false);
             anim.SetBool("Run", false);
         }
-        if (cmnRay.grnd)
+        if (plr.jump)
+        {
+            anim.SetBool("Jump", true);
+        }
+        else
         {
             anim.SetBool("Jump", false);
+        }
+        if (plr.fall)
+        {
+            anim.SetBool("Fall", true);
+        }
+        else
+        {
             anim.SetBool("Fall", false);
         }
     }

@@ -15,6 +15,8 @@ public class PlayerScr : MonoBehaviour
     public Vector3 jumpHgh = new Vector3(0, 0, 0);
     public bool jump;
     public bool fall;
+    public bool walk;
+    public bool run;
     float op;
     float np;
 
@@ -42,6 +44,7 @@ public class PlayerScr : MonoBehaviour
         PlrWalk();
         PlrRun();
         PlrJump();
+        Checks();
         op = transform.position.y;
 
         //check for collision with melon
@@ -55,11 +58,19 @@ public class PlayerScr : MonoBehaviour
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-3, rb.velocity.y);
+            run = false;
+            walk = true;
         }
-        if (Input.GetKey("right"))
+        else if (Input.GetKey("right"))
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(3, rb.velocity.y);
+            run = false;
+            walk = true;
+        }
+        else if (rb.velocityX < 1.5 || rb.velocityX > -1.5)
+        {
+            walk = false;
         }
     }
 
@@ -70,17 +81,24 @@ public class PlayerScr : MonoBehaviour
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-6, rb.velocity.y);
+            walk = false;
+            run = true;
         }
-        if (Input.GetKey("x") && Input.GetKey("right"))
+        else if (Input.GetKey("x") && Input.GetKey("right"))
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(6, rb.velocity.y);
+            walk = false;
+            run = true;
+        }
+        else if (rb.velocityX < 6 || rb.velocityX > -6)
+        {
+            run = false;
         }
     }
 
     void PlrJump()
     { 
-
         if (Input.GetKeyDown("z") && cmnRay.grnd == true)
         {
             rb.AddForce(jumpHgh, ForceMode2D.Impulse);
@@ -95,7 +113,18 @@ public class PlayerScr : MonoBehaviour
             fall = true;
             jump = false;
         }
-
     }
-
+    void Checks()
+    {
+        if (cmnRay.grnd)
+        {
+            jump = false;
+            fall = false;
+        }
+        else
+        {
+            walk = false;
+            run = false;
+        }
+    }
 }
