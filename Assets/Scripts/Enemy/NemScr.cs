@@ -4,29 +4,48 @@ using UnityEngine;
 
 public class NemScr : MonoBehaviour
 {
-    CommonRay cmnRay;
+    EnemPtrl ptr;
     PublicScr pubScr;
     Rigidbody2D rb;
-    // Start is called before the first frame update
+    Animator anim;
+    public bool kill = false;
     void Start()
     {
-        cmnRay = gameObject.AddComponent<CommonRay>();
+        ptr = gameObject.AddComponent<EnemPtrl>();
         pubScr = gameObject.AddComponent<PublicScr>();
+        anim = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        anim.GetBool("Kill");
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (cmnRay.nemT)
+        if (ptr.NemGrndRay())
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-2f, rb.velocity.y);
         }
-        if (!cmnRay.nemT)
+        else
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(2f, rb.velocity.y);
         }
+    }
+    public void Die()
+    {
+        print("kill");
+        Destroy(rb);
+        Destroy(gameObject.GetComponent<CapsuleCollider2D>());
+        Destroy(gameObject.GetComponentInChildren<BoxCollider2D>());
+        anim.SetBool("Kill", true);
+        StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.717f);
+        ActuallyDie();
+    }
+    void ActuallyDie()
+    {
+        Destroy(gameObject);
     }
 }

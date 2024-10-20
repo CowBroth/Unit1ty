@@ -25,30 +25,20 @@ public class PlayerScr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         pubScr = gameObject.AddComponent<PublicScr>();
         cmnRay = gameObject.AddComponent<CommonRay>();
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         sr = GetComponent<SpriteRenderer>();
-
-        melonCount = 0;
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
-
         np = transform.position.y;
         PlrWalk();
         PlrRun();
         PlrJump();
         Checks();
         op = transform.position.y;
-
-        //check for collision with melon
-        
     }
 
     void PlrWalk()
@@ -56,14 +46,12 @@ public class PlayerScr : MonoBehaviour
 
         if (Input.GetKey("left"))
         {
-            pubScr.FlipObject(true);
             rb.velocity = new Vector2(-3, rb.velocity.y);
             run = false;
             walk = true;
         }
         else if (Input.GetKey("right"))
         {
-            pubScr.FlipObject(false);
             rb.velocity = new Vector2(3, rb.velocity.y);
             run = false;
             walk = true;
@@ -72,6 +60,14 @@ public class PlayerScr : MonoBehaviour
         {
             walk = false;
         }
+        if (Input.GetKey("left") && cmnRay.grnd)
+        {
+            pubScr.FlipObject(true);
+        }
+        if (Input.GetKey("right") && cmnRay.grnd)
+        {
+            pubScr.FlipObject(false);
+        }
     }
 
     void PlrRun()
@@ -79,14 +75,12 @@ public class PlayerScr : MonoBehaviour
 
         if (Input.GetKey("x") && Input.GetKey("left"))
         {
-            pubScr.FlipObject(true);
             rb.velocity = new Vector2(-6, rb.velocity.y);
             walk = false;
             run = true;
         }
         else if (Input.GetKey("x") && Input.GetKey("right"))
         {
-            pubScr.FlipObject(false);
             rb.velocity = new Vector2(6, rb.velocity.y);
             walk = false;
             run = true;
