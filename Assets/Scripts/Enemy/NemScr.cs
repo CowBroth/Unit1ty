@@ -10,9 +10,9 @@ public class NemScr : MonoBehaviour
     Animator anim;
     public bool kill = false;
     public float st, en;
+    public bool trn = false;
     void Start()
     {
-        ptr = gameObject.AddComponent<EnemPtrl>();
         pubScr = gameObject.AddComponent<PublicScr>();
         anim = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -20,12 +20,20 @@ public class NemScr : MonoBehaviour
     }
     void Update()
     {
-        if (gameObject.transform.position.x == en)
+        if (gameObject.transform.position.x >= en)
+        {
+            trn = true;
+        }
+        if (gameObject.transform.position.x <= st)
+        {
+            trn = false;
+        }
+        if (trn)
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-2f, rb.velocity.y);
         }
-        if (gameObject.transform.position.x > st)
+        else
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(2f, rb.velocity.y);

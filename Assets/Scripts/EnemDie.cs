@@ -16,8 +16,6 @@ public class EnemDie : MonoBehaviour
         if (col.gameObject.tag == "6Head")
         {
             gameObject.GetComponentInParent<Rigidbody2D>().AddForce(new Vector3(0, 37.5f, 0), ForceMode2D.Impulse);
-            enem = col.gameObject;
-            enem.GetComponentInParent<EnemStill>().Die();
         }
     }
 }

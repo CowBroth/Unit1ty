@@ -19,7 +19,7 @@ public class CommonRay : MonoBehaviour
 
     void PlrGrndRay()
     {
-        float length = 0.15f;
+        float length = 0.3f;
 
         RaycastHit2D ray1 = Physics2D.Raycast(transform.position + new Vector3(-0.22f, 0.1f, 0f), Vector2.down, length, floor);
         RaycastHit2D ray2 = Physics2D.Raycast(transform.position + new Vector3(0.22f, 0.1f, 0f), Vector2.down, length, floor);
