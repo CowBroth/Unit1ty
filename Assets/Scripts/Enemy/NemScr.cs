@@ -9,6 +9,7 @@ public class NemScr : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     public bool kill = false;
+    public float st, en;
     void Start()
     {
         ptr = gameObject.AddComponent<EnemPtrl>();
@@ -19,12 +20,12 @@ public class NemScr : MonoBehaviour
     }
     void Update()
     {
-        if (ptr.NemGrndRay())
+        if (gameObject.transform.position.x == en)
         {
             pubScr.FlipObject(true);
             rb.velocity = new Vector2(-2f, rb.velocity.y);
         }
-        else
+        if (gameObject.transform.position.x > st)
         {
             pubScr.FlipObject(false);
             rb.velocity = new Vector2(2f, rb.velocity.y);
@@ -32,7 +33,7 @@ public class NemScr : MonoBehaviour
     }
     public void Die()
     {
-        print("kill");
+        print("kill" + gameObject.name);
         Destroy(rb);
         Destroy(gameObject.GetComponent<CapsuleCollider2D>());
         Destroy(gameObject.GetComponentInChildren<BoxCollider2D>());

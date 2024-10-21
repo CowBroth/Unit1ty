@@ -15,14 +15,14 @@ public class CommonRay : MonoBehaviour
     {
         PlrGrndRay();
     }
+
+
     void PlrGrndRay()
     {
         float length = 0.15f;
-        Vector3 off1 = new Vector3(-0.22f, 0.1f, 0f);
-        Vector3 off2 = new Vector3(0.22f, 0.1f, 0f);
 
-        RaycastHit2D ray1 = Physics2D.Raycast(transform.position + off1, Vector2.down, length, floor);
-        RaycastHit2D ray2 = Physics2D.Raycast(transform.position + off2, Vector2.down, length, floor);
+        RaycastHit2D ray1 = Physics2D.Raycast(transform.position + new Vector3(-0.22f, 0.1f, 0f), Vector2.down, length, floor);
+        RaycastHit2D ray2 = Physics2D.Raycast(transform.position + new Vector3(0.22f, 0.1f, 0f), Vector2.down, length, floor);
 
         if (ray1.collider != null || ray2.collider != null)
         {
@@ -35,7 +35,7 @@ public class CommonRay : MonoBehaviour
             color = Color.white;
         }
 
-        Debug.DrawRay(transform.position + off1, Vector2.down * length, color);
-        Debug.DrawRay(transform.position + off2, Vector2.down * length, color);
+        Debug.DrawRay(transform.position + new Vector3(-0.22f, 0.1f, 0f), Vector2.down * length, color);
+        Debug.DrawRay(transform.position + new Vector3(0.22f, 0.1f, 0f), Vector2.down * length, color);
     }
 }

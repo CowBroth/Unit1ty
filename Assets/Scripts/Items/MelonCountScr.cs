@@ -16,6 +16,7 @@ public class MelonCountScr : MonoBehaviour
     }
     private void Update()
     {
-        txt.text = ("x  " + melonCount);
+        txt.text = melonCount.ToString();
     }
 }
+// hey, finish your goddamn game already :)

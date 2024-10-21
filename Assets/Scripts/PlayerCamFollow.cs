@@ -14,12 +14,7 @@ public class PlayerCamFollow : MonoBehaviour
     {
 
         x = parent.transform.position.x;
-        y = parent.transform.position.y / 2;
-
-        if (parent.transform.position.y < -4)
-        {
-            y = -3.9f;
-        }
+        y = parent.transform.position.y;
 
         des = new Vector3(x, y, 0);
 

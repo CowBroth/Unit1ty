@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - 5Head
   - Feet
+  - 6Head
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - Enemy
   - 5Head
-  - 
-  - 
+  - Floor2
+  - PlrIgnore
   - 
   - 
   - 
