@@ -6,10 +6,14 @@ public class PlrAnimScr : MonoBehaviour
 {
     Animator anim;
     PlayerScr plr;
+    PlrDie hit;
+    SpriteRenderer sr;
     private void Start()
     {
         anim = GetComponent<Animator>();
         plr = GetComponent<PlayerScr>();
+        hit = GetComponent<PlrDie>();
+        sr = GetComponent<SpriteRenderer>();
 
         anim.GetBool("Walk");
         anim.GetBool("Run");
@@ -49,6 +53,14 @@ public class PlrAnimScr : MonoBehaviour
         else
         {
             anim.SetBool("Fall", false);
+        }
+        if (hit.inv)
+        {
+            sr.color = Color.red;
+        }
+        else
+        {
+            sr.color = Color.white;
         }
     }
 }
